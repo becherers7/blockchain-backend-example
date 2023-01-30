@@ -1,6 +1,6 @@
 ### Instructions
 
-1. After downloading the rep - you'll have to configure a .env file which takes in the following:
+1. After downloading the repo - you'll have to configure a .env file which takes in the following:
    - DB connection variables for postgres:
      - DB_USER
      - DB_PASS
