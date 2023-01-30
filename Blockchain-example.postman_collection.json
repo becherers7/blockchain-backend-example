@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "7c8de90b-a255-439a-bb6e-cb1ee45df77a",
+		"name": "Blockchain-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"steveBecherer\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"steveBecherer\",\r\n    \"email\": \"becherers7@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "0jokQqzBSz18aW8IQ4KbBvYQ0nlAUW",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc0OTQ2MzM4LCJleHAiOjE2NzUwMzI3Mzh9.SMj1Wgyh1zDC9VMHsO-zyaBWEwYQAg3u3HZM1hHWaeQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pinata",
+			"item": [
+				{
+					"name": "Create Pinata File",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc1MDM3NDM5LCJleHAiOjE2NzUxMjM4Mzl9.5PGf6zQXcNqw_l3LPImOBM33GOLazHTvNlsTc_Bt3EQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ipfsFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "username",
+									"value": "steveBecherer",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pinata/file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pinata",
+								"file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test pinata connection",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "pinata",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "pinata_api_key",
+								"value": "7254b91dd9e52e367a30",
+								"type": "text"
+							},
+							{
+								"key": "pinata_secret_api_key",
+								"value": "96d3ece492dc07a9d0d329da50441c2f867522b7fb5734e1f3a91b798e38fc15",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.pinata.cloud/data/testAuthentication",
+							"protocol": "https",
+							"host": [
+								"api",
+								"pinata",
+								"cloud"
+							],
+							"path": [
+								"data",
+								"testAuthentication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get pinata pins",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc1MDM4NDcyLCJleHAiOjE2NzUxMjQ4NzJ9.mkAUraXsy2qrjcs5K8d7kmTJg_uiEPBA4glyW_WwK8E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/pinata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pinata"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
